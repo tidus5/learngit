@@ -33,6 +33,8 @@ git checkout -- readme.txt	（未add到暂存区，撤销到和库内一样。否则和暂存区一样。
 切换分支：					git checkout master
 合并其他分支到当前分支：	git merge dev
 删除分支：					git branch -d dev
+merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict fixed"
+查看分支合并情况：			git log --graph --pretty=oneline --abbrev-commit
 
 
 
