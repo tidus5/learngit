@@ -34,7 +34,14 @@ git checkout -- readme.txt	（未add到暂存区，撤销到和库内一样。否则和暂存区一样。
 合并其他分支到当前分支：	git merge dev
 删除分支：					git branch -d dev
 merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict fixed"
-查看分支合并情况：			git log --graph --pretty=oneline --abbrev-commit
+查看分支合并图：			git log --graph --pretty=oneline --abbrev-commit
+添加合并节点的合并：        git merge --no-ff -m "merge with no-ff" dev
+强制删除未合并的分支：      git branch -D <name>
 
+保存工作现场：              git stash           （创建 bug分支时，可以使用来保存当前工作）
+还原工作现场：              git stash pop       （等于 git stash apply  恢复， git stash drop 删除）
+查看保存现场列表：          git stash list  
+恢复指定的stash：           git stash apply stash@{0}     （最后stash的，会放到0， pop 弹出的也是0）
 
-
+查看远程库的信息：          git remote           （显示详细信息：git remote -v）
+推送分支：                  git push origin master       （推送其他分支：git push origin dev）
