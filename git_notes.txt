@@ -1,0 +1,38 @@
+添加：  		git add file1.txt file2.txt
+提交：  		git commit -m "add 3 file"
+查看差异：				git diff readme.txt
+
+
+查看提交日志：  			git log
+查看提交日志（单行）：		git log --pretty=oneline
+
+回退到上一个版本：			git reset --hard HEAD^		（上上个:HEAD^^  上100个: HEAD~100)
+回到未来的某个版本：		git reset --har 1094adb		（输入commit id）
+查看操作命令历史：			git reflog
+
+撤销
+将工作区文件撤回到最近一次git commit或git add时的状态：	
+git checkout -- readme.txt	（未add到暂存区，撤销到和库内一样。否则和暂存区一样。  -- 很重要，不能漏）
+总结：
+1.工作区修改，未add到缓存区，需要撤销：			git checkout -- file
+2.工作区修改，add到了缓存区，需要先撤销暂存区：	git reset HEAD <file>		再回到场景1：	git checkout -- file
+3.commit到了版本库，未推送到远程库。			git reset --hard commit_id
+
+
+删除已经提交的文件：		git rm test.txt		git commit -m "remove test.txt"
+本地rm 删除了，需要恢复:	git checkout -- <file>
+如果git rm了， 需要恢复:	git reset HEAD <file>	git checkout -- <file>
+
+添加远程库：				git remote add origin git@github.com:tidus5/learngit.git
+首次推送并关联远程库：		git push -u origin master		
+以后推送：					git push origin master
+从远程库克隆				git clone git@github.com:michaelliao/gitskills.git
+
+创建并切换到新分支：		git checkout -b dev		（-b参数表示创建并切换，相当于  git branch dev git checkout dev）
+查看当前所有分支：			git branch
+切换分支：					git checkout master
+合并其他分支到当前分支：	git merge dev
+删除分支：					git branch -d dev
+
+
+
