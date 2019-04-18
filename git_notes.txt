@@ -44,4 +44,7 @@ merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict 
 恢复指定的stash：           git stash apply stash@{0}     （最后stash的，会放到0， pop 弹出的也是0）
 
 查看远程库的信息：          git remote           （显示详细信息：git remote -v）
-推送分支：                  git push origin master       （推送其他分支：git push origin dev）
+推送分支：                  git push origin <branch-name>        （本地分支不推送，则对其他人不可见）
+如果推送失败，则要拉取：    git pull
+本地创建和远程对应分支：    git checkout -b branch-name origin/branch-name      （名称最好一致）
+链接本地分支和远程分支：    git branch --set-upstream-to <branch-name> origin/<branch-name>
