@@ -48,3 +48,10 @@ merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict 
 如果推送失败，则要拉取：    git pull
 本地创建和远程对应分支：    git checkout -b branch-name origin/branch-name      （名称最好一致）
 链接本地分支和远程分支：    git branch --set-upstream-to <branch-name> origin/<branch-name>
+
+将本地提交和远程更新合并为单线：    git rebase origin   比如分支有2个提交，主线合并过来个新提交。 rebase 可以先将主线新提交放前面，再应用两个分支提交上去）http://gitbook.liuhui998.com/4_2.html
+rebase遇到冲突解决后git add：    git rebase --continue
+终止rebase：                git rebase --abort
+
+打标签：                    git tag v1.0
+查看所有标签                git tag
