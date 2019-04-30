@@ -37,6 +37,7 @@ merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict 
 查看分支合并图：			git log --graph --pretty=oneline --abbrev-commit
 添加合并节点的合并：        git merge --no-ff -m "merge with no-ff" dev
 强制删除未合并的分支：      git branch -D <name>
+拉取并切换到远程分支：      git checkout -t origin/2.0.0
 
 保存工作现场：              git stash           （创建 bug分支时，可以使用来保存当前工作）
 还原工作现场：              git stash pop       （等于 git stash apply  恢复， git stash drop 删除）
