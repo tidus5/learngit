@@ -7,7 +7,7 @@
 查看提交日志（单行）：		git log --pretty=oneline
 
 回退到上一个版本：			git reset --hard HEAD^		（上上个:HEAD^^  上100个: HEAD~100)
-回到未来的某个版本：		git reset --har 1094adb		（输入commit id）
+回到未来的某个版本：		git reset --hard 1094adb		（输入commit id）
 查看操作命令历史：			git reflog
 
 撤销
