@@ -28,6 +28,8 @@ git checkout -- readme.txt	（未add到暂存区，撤销到和库内一样。否则和暂存区一样。
 以后推送：					git push origin master
 从远程库克隆				git clone git@github.com:michaelliao/gitskills.git
 
+
+
 创建并切换到新分支：		git checkout -b dev		（-b参数表示创建并切换，相当于  git branch dev git checkout dev）
 查看当前所有分支：			git branch
 切换分支：					git checkout master
@@ -38,11 +40,15 @@ merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict 
 添加合并节点的合并：        git merge --no-ff -m "merge with no-ff" dev
 强制删除未合并的分支：      git branch -D <name>
 拉取并切换到远程分支：      git checkout -t origin/2.0.0
+清除远端已删除的分支        git remote prune origin
+
 
 保存工作现场：              git stash           （创建 bug分支时，可以使用来保存当前工作）
 还原工作现场：              git stash pop       （等于 git stash apply  恢复， git stash drop 删除）
 查看保存现场列表：          git stash list  
 恢复指定的stash：           git stash apply stash@{0}     （最后stash的，会放到0， pop 弹出的也是0）
+
+
 
 查看远程库的信息：          git remote           （显示详细信息：git remote -v）
 推送分支：                  git push origin <branch-name>        （本地分支不推送，则对其他人不可见）
@@ -50,9 +56,13 @@ merge后有冲突，解决后提交： git add readme.txt          git commit -m "conflict 
 本地创建和远程对应分支：    git checkout -b branch-name origin/branch-name      （名称最好一致）
 链接本地分支和远程分支：    git branch --set-upstream-to <branch-name> origin/<branch-name> （git push --set-upstream origin dev）
 
+
+
 将本地提交和远程更新合并为单线：    git rebase origin   比如分支有2个提交，主线合并过来个新提交。 rebase 可以先将主线新提交放前面，再应用两个分支提交上去）http://gitbook.liuhui998.com/4_2.html
 rebase遇到冲突解决后git add：    git rebase --continue
 终止rebase：                git rebase --abort
+
+
 
 打标签：                    git tag v1.0
 查看所有标签                git tag
